@@ -24,7 +24,7 @@ $ gem install easy_to_dictate_numbers
 
 ## Usage
 
-To use EasyToDictateNumbers, simply call the `to_dictable` method on any integer. This method is added to the `Integer` class and converts the number into its word representation.
+To use EasyToDictateNumbers, simply call the `to_dictable` method on any `Integer`, this converts the number into its easy to dictate word representation.
 
 ```ruby
 require 'easy_to_dictate_numbers'
