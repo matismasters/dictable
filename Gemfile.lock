@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    easy_to_dictate_numbers (0.1.0)
+    easy_to_dictate_numbers (0.1.2)
 
 GEM
   remote: https://rubygems.org/
