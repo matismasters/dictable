@@ -26,22 +26,34 @@ RSpec.describe EasyToDictateNumbers::NumberToDictable do
     end
 
     context 'with three-digit numbers' do
+      it 'converts 000 to zero zero zero' do
+        expect(described_class.number_to_words('000')).to eq('zero zero zero')
+      end
+
       it 'converts 100 to one hundred' do
         expect(described_class.number_to_words(100)).to eq('one hundred')
       end
 
-      it 'converts 123 to one hundred twenty three' do
-        expect(described_class.number_to_words(123)).to eq('one hundred twenty three')
+      it 'converts 123 to one twenty three' do
+        expect(described_class.number_to_words(123)).to eq('one twenty three')
       end
     end
 
     context 'with four-digit numbers' do
-      it 'converts 1000 to ten hundred' do
-        expect(described_class.number_to_words(1000)).to eq('ten hundred')
+      it 'converts 0000 to zero zero zero zero' do
+        expect(described_class.number_to_words('0000')).to eq('zero zero zero zero')
       end
 
-      it 'converts 4321 to forty three hundred twenty one' do
-        expect(described_class.number_to_words(4321)).to eq('forty three hundred twenty one')
+      it 'converts 1000 to one thousand' do
+        expect(described_class.number_to_words(1000)).to eq('one thousand')
+      end
+
+      it 'converts 4321 to forty three twenty one' do
+        expect(described_class.number_to_words(4321)).to eq('forty three twenty one')
+      end
+
+      it 'converts 4300 to forty three hundred' do
+        expect(described_class.number_to_words(4300)).to eq('forty three hundred')
       end
     end
 
@@ -51,9 +63,11 @@ RSpec.describe EasyToDictateNumbers::NumberToDictable do
       end
     end
 
-    context 'with invalid input' do
-      it 'raises an error for negative numbers' do
-        expect { described_class.number_to_words(-1) }.to raise_error(EasyToDictateNumbers::Error)
+    context 'with non-number characters in the string' do
+      it 'raises an error for strings with non-number characters' do
+        expect do
+          described_class.number_to_words('AB00123')
+        end.to raise_error(EasyToDictateNumbers::NonNumberCharactersPresent)
       end
     end
   end

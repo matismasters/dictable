@@ -30,7 +30,7 @@ To use EasyToDictateNumbers, simply call the `to_dictable` method on any `Intege
 require 'easy_to_dictate_numbers'
 
 puts 123.to_dictable
-# Output: "one two three"
+# Output: "one twenty three"
 ```
 
 ## Development
