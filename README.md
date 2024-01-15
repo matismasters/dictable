@@ -31,6 +31,9 @@ require 'easy_to_dictate_numbers'
 
 puts 123.to_dictable
 # Output: "one twenty three"
+
+puts "1243".to_dictable_number
+# Output: "twelve forty three"
 ```
 
 ## Development
