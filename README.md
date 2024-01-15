@@ -1,6 +1,6 @@
 # EasyToDictateNumbers
 
-EasyToDictateNumbers is a Ruby gem that allows for easy conversion of numbers into their word representations. This gem is useful in scenarios where numbers need to be communicated clearly, such as in telephone conversations or when dictating information.
+GitHub Copilot: EasyToDictateNumbers is an opinionated Ruby gem designed to convert numbers into their spoken equivalents. This gem is particularly useful in situations where precise verbal communication of numbers is required, such as during phone calls or dictation. It makes certain decisions about the "best" way to pronounce numbers, which may be subject to debate.
 
 ## Installation
 
