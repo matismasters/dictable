@@ -3,17 +3,19 @@
 require 'spec_helper'
 require 'easy_to_dictate_numbers'
 
-RSpec.describe 'Test for extended primitives' do
+# Disabling some Rubocop rules for this test as is the best way to test the
+# extended primitives monkey patching
+RSpec.describe 'Test for extended primitives' do # rubocop:disable RSpec/DescribeClass
   describe 'Integer#to_dictable' do
-    it 'should call EasyToDictateNumbers::NumberToDictable.number_to_words' do
-      expect(EasyToDictateNumbers::NumberToDictable).to receive(:number_to_words).with(123)
+    it 'calls EasyToDictateNumbers::DictableNumber.number_to_words' do
+      expect_any_instance_of(EasyToDictateNumbers::DictableNumber).to receive(:to_dictable) # rubocop:disable RSpec/AnyInstance
       123.to_dictable
     end
   end
 
   describe 'String#to_dictable_number' do
-    it 'should call EasyToDictateNumbers::NumberToDictable.number_to_words' do
-      expect(EasyToDictateNumbers::NumberToDictable).to receive(:number_to_words).with('123')
+    it 'calls EasyToDictateNumbers::DictableNumber.number_to_words' do
+      expect_any_instance_of(EasyToDictateNumbers::DictableNumber).to receive(:to_dictable) # rubocop:disable RSpec/AnyInstance
       '123'.to_dictable_number
     end
   end
