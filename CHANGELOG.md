@@ -11,3 +11,11 @@
 ## [0.1.2] - 2024-01-14
 
 - Moved extend primitives require to lib/easy_to_dictate_numbers.rb.
+
+## [0.1.3] - 2024-01-14
+
+- Refactored to cover special cases:
+  - 100  -> one hundred
+  - 1000 -> one thousand
+  - 2334 -> twenty three thirty four
+- Extended string with `to_dictable_number`

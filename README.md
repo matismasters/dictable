@@ -36,6 +36,23 @@ puts "1243".to_dictable_number
 # Output: "twelve forty three"
 ```
 
+## Example
+List of samples from specs:
+
+- `100` is converted to `one hundred`
+- `123` is converted to `one twenty three`
+- `'001'` is converted to `zero zero one`
+- `'010'` is converted to `zero ten`
+- `'0000'` is converted to `zero zero zero zero`
+- `1000` is converted to `one thousand`
+- `4321` is converted to `forty three twenty one`
+- `4300` is converted to `forty three hundred`
+- `'0001'` is converted to `zero zero zero one`
+- `'0010'` is converted to `zero zero ten`
+- `'0100'` is converted to `zero one hundred`
+
+Please note that the numbers in quotes are treated as strings, which allows leading zeroes to be preserved.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

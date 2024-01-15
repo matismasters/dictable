@@ -15,10 +15,23 @@ module EasyToDictateNumbers
     TENS = %w[twenty thirty forty fifty sixty seventy eighty ninety].freeze
 
     class << self
-      def number_to_words(number_to_transform)
-        number_as_string = number_to_transform.to_s
+      def number_to_words(number_to_dictate)
+        number_as_string = number_to_dictate.to_s
         validate_number(number_as_string)
 
+        leading_zeroes_words = leading_zeroes_to_words(number_as_string)
+
+        number_without_leading_zeroes = number_without_leading_zeroes(number_as_string)
+        number_without_leading_zeroes_words = number_without_leading_zeroes_to_words(number_without_leading_zeroes)
+
+        [leading_zeroes_words, number_without_leading_zeroes_words].reject(&:empty?).join(' ')
+      end
+
+      def validate_number(number_as_string)
+        raise NonNumberCharactersPresent if number_as_string.match?(/[^0-9]/)
+      end
+
+      def number_without_leading_zeroes_to_words(number_as_string)
         case number_as_string.length
         when 1 then one_digit_number_to_words(number_as_string)
         when 2 then two_digit_number_to_words(number_as_string)
@@ -28,13 +41,17 @@ module EasyToDictateNumbers
         end
       end
 
-      # Check that the string contains only numbers
-      def validate_number(number_as_string)
-        raise NonNumberCharactersPresent if number_as_string.match?(/[^0-9]/)
-      end
-
       def repeat_zeroes(number_of_zeroes)
         number_of_zeroes.times.map { ONES[0] }.join(' ')
+      end
+
+      def leading_zeroes_to_words(number_as_string)
+        leading_zeroes = number_as_string.match(/^0+/).to_s
+        leading_zeroes.empty? ? '' : repeat_zeroes(leading_zeroes.length)
+      end
+
+      def number_without_leading_zeroes(number_as_string)
+        number_as_string.sub(/^0+/, '')
       end
 
       def single_thousands_to_words(number_as_string)
@@ -52,6 +69,7 @@ module EasyToDictateNumbers
 
       def two_digit_number_to_words(number_as_string)
         number = number_as_string.to_i
+
         return repeat_zeroes(2) if number.zero?
         return TEENS[number - 10] if number < 20
 

@@ -23,6 +23,10 @@ RSpec.describe EasyToDictateNumbers::NumberToDictable do
       it 'converts 21 to twenty one' do
         expect(described_class.number_to_words(21)).to eq('twenty one')
       end
+
+      it 'converts 09 to zero nine' do
+        expect(described_class.number_to_words('09')).to eq('zero nine')
+      end
     end
 
     context 'with three-digit numbers' do
@@ -36,6 +40,14 @@ RSpec.describe EasyToDictateNumbers::NumberToDictable do
 
       it 'converts 123 to one twenty three' do
         expect(described_class.number_to_words(123)).to eq('one twenty three')
+      end
+
+      it 'converts 001 to zero zero one' do
+        expect(described_class.number_to_words('001')).to eq('zero zero one')
+      end
+
+      it 'converts 010 to zero ten' do
+        expect(described_class.number_to_words('010')).to eq('zero ten')
       end
     end
 
@@ -54,6 +66,18 @@ RSpec.describe EasyToDictateNumbers::NumberToDictable do
 
       it 'converts 4300 to forty three hundred' do
         expect(described_class.number_to_words(4300)).to eq('forty three hundred')
+      end
+
+      it 'converts 0001 to zero zero zero one' do
+        expect(described_class.number_to_words('0001')).to eq('zero zero zero one')
+      end
+
+      it 'converts 0010 to zero zero ten' do
+        expect(described_class.number_to_words('0010')).to eq('zero zero ten')
+      end
+
+      it 'converts 0100 to zero one hundred' do
+        expect(described_class.number_to_words('0100')).to eq('zero one hundred')
       end
     end
 

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative 'lib/easy_to_dictate_numbers/version'
-require_relative 'lib/easy_to_dictate_numbers/extend_primitives'
 
 Gem::Specification.new do |spec|
   spec.name = 'easy_to_dictate_numbers'
