@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = 'Transform numbers into words to dictate them easily.'
   spec.description = 'Transform numbers into words to dictate them easily.' \
-    "For example 1234 becomes twelve thirty four and 123456 becomes 'one two three, four five six'"
+                     "For example 1234 becomes twelve thirty four and 123456 becomes 'one two three, four five six'"
   spec.homepage = 'https://github.com/matismasters/easy_to_dictate_numbers'
   spec.required_ruby_version = '>= 2.6.0'
 
@@ -36,4 +36,5 @@ Gem::Specification.new do |spec|
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end
