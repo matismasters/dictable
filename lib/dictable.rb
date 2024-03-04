@@ -18,29 +18,17 @@ module DictableNumber
       raise NotImplementedError
     end
   end
-
-  module Transformers
-    
-
 end
 
-=begin
-
-module DictableNumber; end
-class DictableNumber::Base; end
-
+#
+# module DictableNumber; end
+# class DictableNumber::Base; end
+#
 # Each language will have a dictionary
-module DictableNumber::English; end
-module DictableNumber::Spanish; end
-
+# module DictableNumber::English; end
+# module DictableNumber::Spanish; end
+#
 # this is the explanation of the adapter pattern
 # https://refactoring.guru/design-patterns/adapter/ruby/example
-
-
-
-
-
-
-
-end
-
+#
+#
