@@ -29,15 +29,19 @@ To use Dictable, simply call the `to_dictable` method on any `Integer`, this con
 ```ruby
 require 'dictable'
 
-puts 123.to_dictable
-# Output: "one twenty three"
+puts Dictable.address('2300 N Lincoln Park S')
+# > 'twenthy three hundred North Lincoln Park Street'
 
-puts "1243".to_dictable_number
-# Output: "twelve forty three"
+puts Dictable.number('1234567890')
+# > 'one two three four, five six seven eight, nine zero'
+
+puts Dictable.number('1234567890', chunk_size: 2)
+# > 'one two, three four, five six, seven eight, nine zero'
+
 ```
 
 ## Example
-List of samples from specs:
+List of samples from specs for addresses:
 
 - `100` is converted to `one hundred`
 - `123` is converted to `one twenty three`

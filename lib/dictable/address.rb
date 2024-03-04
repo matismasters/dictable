@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Dictable
-  class DictableNumber
+  class Address
     attr_reader :number_to_dictate, :dictable_number_in_words
 
     ONES = %w[zero one two three four five six seven eight nine].freeze
@@ -40,7 +40,7 @@ module Dictable
       when 2 then two_digit_number_to_words(number_as_string)
       when 3 then three_digit_number_to_words(number_as_string)
       when 4 then four_digit_number_to_words(number_as_string)
-      else large_number_to_words(number_as_string)
+      else Dictable::Number.to_dictable(number_as_string)
       end
     end
 
@@ -105,10 +105,6 @@ module Dictable
         two_digit_number_to_words(high_pair),
         low_pair.to_i.zero? ? 'hundred' : two_digit_number_to_words(low_pair)
       ].join(' ')
-    end
-
-    def large_number_to_words(number_as_string)
-      number_as_string.chars.map { |digit| ONES[digit.to_i] }.each_slice(3).map { |digit| digit.join(' ') }.join(', ')
     end
   end
 end

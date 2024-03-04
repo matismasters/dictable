@@ -3,7 +3,7 @@
 require 'spec_helper'
 require 'dictable'
 
-RSpec.describe Dictable::DictableNumber do
+RSpec.describe Dictable::Address do
   describe '.number_to_words' do
     context 'with single-digit numbers' do
       it 'converts 0 to zero' do
@@ -81,16 +81,10 @@ RSpec.describe Dictable::DictableNumber do
       end
     end
 
-    context 'with large numbers' do
-      it 'converts 123456 to one two three, four five six' do
-        expect(described_class.new(123_456).to_dictable).to eq('one two three, four five six')
-      end
-    end
-
     context 'with non-number characters in the string' do
       it 'raises an error for strings with non-number characters' do
         expect do
-          described_class.new('AB00123').to_dictable
+          described_class.new('AB00123')
         end.to raise_error(Dictable::NonNumberCharactersPresent)
       end
     end
