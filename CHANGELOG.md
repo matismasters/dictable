@@ -10,7 +10,7 @@
 
 ## [0.1.2] - 2024-01-14
 
-- Moved extend primitives require to lib/easy_to_dictate_numbers.rb.
+- Moved extend primitives require to lib/dictable.rb.
 
 ## [0.1.3] - 2024-01-14
 

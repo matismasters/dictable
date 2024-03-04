@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'easy_to_dictate_numbers'
+require 'dictable'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

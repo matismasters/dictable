@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-require_relative 'lib/easy_to_dictate_numbers/version'
+require_relative 'lib/dictable/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'easy_to_dictate_numbers'
-  spec.version = EasyToDictateNumbers::VERSION
+  spec.name = 'dictable'
+  spec.version = Dictable::VERSION
   spec.authors = ['Matias Verges']
-  spec.email = ['matismasters@gmail.com']
+  spec.email = ['matis@matis.io']
 
   spec.summary = 'Transform numbers into words to dictate them easily.'
   spec.description = 'Transform numbers into words to dictate them easily.' \
                      "For example 1234 becomes twelve thirty four and 123456 becomes 'one two three, four five six'"
-  spec.homepage = 'https://github.com/matismasters/easy_to_dictate_numbers'
+  spec.homepage = 'https://github.com/matismasters/dictable'
   spec.required_ruby_version = '>= 2.6.0'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/matismasters/easy_to_dictate_numbers'
-  spec.metadata['changelog_uri'] = 'https://github.com/matismasters/easy_to_dictate_numbers/blob/main/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/matismasters/dictable'
+  spec.metadata['changelog_uri'] = 'https://github.com/matismasters/dictable/blob/main/CHANGELOG.md'
   spec.license = 'MIT'
 
   # Specify which files should be added to the gem when it is released.
@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
         f.start_with?(*%w[bin/ test/ spec/ features/ .git .circleci appveyor Gemfile])
     end
   end
+
   spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']

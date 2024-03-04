@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module EasyToDictateNumbers
+module Dictable
   class DictableNumber
     attr_reader :number_to_dictate, :dictable_number_in_words
 

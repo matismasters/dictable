@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require 'easy_to_dictate_numbers'
+require 'dictable'
 
-RSpec.describe EasyToDictateNumbers::DictableNumber do
+RSpec.describe Dictable::DictableNumber do
   describe '.number_to_words' do
     context 'with single-digit numbers' do
       it 'converts 0 to zero' do
@@ -91,7 +91,7 @@ RSpec.describe EasyToDictateNumbers::DictableNumber do
       it 'raises an error for strings with non-number characters' do
         expect do
           described_class.new('AB00123').to_dictable
-        end.to raise_error(EasyToDictateNumbers::NonNumberCharactersPresent)
+        end.to raise_error(Dictable::NonNumberCharactersPresent)
       end
     end
   end

@@ -1,13 +1,13 @@
-# EasyToDictateNumbers
+# Dictable
 
-GitHub Copilot: EasyToDictateNumbers is an opinionated Ruby gem designed to convert numbers into their spoken equivalents. This gem is particularly useful in situations where precise verbal communication of numbers is required, such as during phone calls or dictation. It makes certain decisions about the "best" way to pronounce numbers, which may be subject to debate.
+GitHub Copilot: Dictable is an opinionated Ruby gem designed to convert numbers into their spoken equivalents. This gem is particularly useful in situations where precise verbal communication of numbers is required, such as during phone calls or dictation. It makes certain decisions about the "best" way to pronounce numbers, which may be subject to debate.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'easy_to_dictate_numbers'
+gem 'dictable'
 ```
 
 And then execute:
@@ -19,15 +19,15 @@ $ bundle install
 Or install it yourself as:
 
 ```bash
-$ gem install easy_to_dictate_numbers
+$ gem install dictable
 ```
 
 ## Usage
 
-To use EasyToDictateNumbers, simply call the `to_dictable` method on any `Integer`, this converts the number into its easy to dictate word representation.
+To use Dictable, simply call the `to_dictable` method on any `Integer`, this converts the number into its easy to dictate word representation.
 
 ```ruby
-require 'easy_to_dictate_numbers'
+require 'dictable'
 
 puts 123.to_dictable
 # Output: "one twenty three"

@@ -1,4 +1,4 @@
-module EasyToDictateNumbers
+module Dictable
   VERSION: String
   # See the writing guide of rbs: https://github.com/ruby/rbs#guides
 end

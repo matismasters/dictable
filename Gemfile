@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in easy_to_dictate_numbers.gemspec
+# Specify your gem's dependencies in dictable.gemspec
 gemspec
 
 gem 'rake', '~> 13.0'

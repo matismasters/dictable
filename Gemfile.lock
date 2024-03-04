@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    easy_to_dictate_numbers (0.1.4)
+    dictable (0.1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -65,7 +65,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  easy_to_dictate_numbers!
+  dictable!
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)

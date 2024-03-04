@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module EasyToDictateNumbers
+module Dictable
   class Error < StandardError; end
 
   class NonNumberCharactersPresent < StandardError
