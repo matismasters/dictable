@@ -3,17 +3,33 @@
 # lib/dictable.rb
 require_relative 'dictable/version'
 require_relative 'dictable/exceptions'
-require_relative 'dictable/address'
-require_relative 'dictable/number'
+require_relative 'dictable/street_name'
+require_relative 'dictable/street_number'
+require 'yaml'
 
 # We are going to change the design of the gem to make it more flexible.
 module Dictable
-  def self.address(address)
-    Address.new(address).to_dictable
+  def self.address(address, lang: :en)
+    address_parts = address.split
+    street_number = address_parts.shift
+    street_address = address_parts.join(' ')
+
+    [
+      number_to_words(street_number, lang: lang),
+      explode_abberviations(street_address, lang: lang)
+    ].join(' ')
   end
 
-  def self.number(number, chunk_size: 3, separator: ',')
-    Number.new(number, chunk_size: chunk_size, separator: separator).to_dictable
+  def self.number_to_words(street_number, lang:)
+    StreetNumber.new(street_number, lang: lang).to_dictable
+  end
+
+  def self.explode_abberviations(address, lang:)
+    StreetName.new(address, lang: lang).to_dictable
+  end
+
+  def self.load_dictionary(name, lang: :en)
+    YAML.load_file("dictionaries/#{lang}/#{name}.yml")
   end
 end
 
