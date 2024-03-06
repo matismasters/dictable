@@ -2,7 +2,6 @@
 
 # lib/dictable.rb
 require_relative 'dictable/version'
-require_relative 'dictable/exceptions'
 require_relative 'dictable/street_name'
 require_relative 'dictable/street_number'
 require 'yaml'

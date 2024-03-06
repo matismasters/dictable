@@ -8,9 +8,11 @@ Gem::Specification.new do |spec|
   spec.authors = ['Matias Verges']
   spec.email = ['matis@matis.io']
 
-  spec.summary = 'Transform numbers into words to dictate them easily.'
-  spec.description = 'Transform numbers into words to dictate them easily.' \
-                     "For example 1234 becomes twelve thirty four and 123456 becomes 'one two three, four five six'"
+  spec.summary = 'Transform street numbers into words to dictate them easily, and explodes street names abbreviations.'
+  spec.description =
+    'Transform street numbers into words to dictate them easily, and explodes street names abbreviations.' \
+    "For example 1234 becomes twelve thirty four and 123456 becomes 'one two three, four five six'"
+
   spec.homepage = 'https://github.com/matismasters/dictable'
   spec.required_ruby_version = '>= 2.6.0'
 

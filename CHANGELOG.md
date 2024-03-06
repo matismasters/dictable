@@ -25,3 +25,9 @@
 
 - Refactor to use instance methods to avoid exposing so many
 - Added rubocop and fixed all errors
+
+## [0.1.5] - 2024-03-01
+
+- Refactor to simplify
+- Supporting leading zeroes is out of scope
+- Added dictionaries to explode address abbreviations
