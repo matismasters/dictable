@@ -28,19 +28,7 @@ module Dictable
   end
 
   def self.load_dictionary(name, lang: :en)
-    YAML.load_file("dictionaries/#{lang}/#{name}.yml")
+    dictionary_path = File.join(__dir__, '../dictionaries', lang.to_s, "#{name}.yml")
+    YAML.load_file(dictionary_path)
   end
 end
-
-#
-# module Number; end
-# class Number::Base; end
-#
-# Each language will have a dictionary
-# module Number::English; end
-# module Number::Spanish; end
-#
-# this is the explanation of the adapter pattern
-# https://refactoring.guru/design-patterns/adapter/ruby/example
-#
-#

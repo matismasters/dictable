@@ -31,3 +31,7 @@
 - Refactor to simplify
 - Supporting leading zeroes is out of scope
 - Added dictionaries to explode address abbreviations
+
+## [0.1.6] - 2024-03-01
+
+- Fix issue with dictionaries not loading when importing the gem in another project
