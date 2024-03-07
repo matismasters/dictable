@@ -28,8 +28,6 @@ $ gem install dictable
 
 ## Usage
 
-To use Dictable, simply call the `to_dictable` method on any `Integer`, this converts the number into its easy to dictate word representation.
-
 ```ruby
 require 'dictable'
 
